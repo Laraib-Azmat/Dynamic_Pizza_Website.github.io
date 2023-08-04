@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./img/icon.png" />
+    <title>Pizza-website</title>
+  </head>
+  <body data-barba = "wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <a id="logo" href="./index.html">Crustopia</a>
+      </div>
+      <ul>
+        <a href="./index.html">Home</a>
+        <a href="#card">Menu</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#" class="login">login</a>
+      </ul>
+    </header>
+
+    <!-- First section -->
+<main data-barba="container"  data-barba-namespace="home">
+    <section class="sec1">
+      <div class="text">
+        <h3 class="design">Délicieux</h3>
+        <h1>
+          OvenGems <br />
+          Pizza
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae fuga
+          asperiores sunt eius iure facilis! Illo deleniti doloremque officiis.
+          Quibusdam, porro! Repellendus consequatur atque autem nulla labore
+          veniam laborum deserunt.
+        </p>
+        <div class="button">
+          <a href="./index2.html"> <button class="delivery">delivery</button></a>
+          <a href="./index2.html"> <button class="Order">Order</button></a>
+       
+        </div>
+      </div>
+      <div class="image">
+        <img src="./img/pizza-2.png" alt="Pizza" />
+      </div>
+      <div class="circle"></div>
+    </section>
+
+    <!-- Section 2 -->
+
+    <section class="cards" id="card">
+      <div class="animation">
+        <div class="leaf">
+          <img src="./img/salad_leaf.png" class="leaf1" alt="" />
+        </div>
+        <div class="leaf2">
+          <img src="./img/salad_leaf.png" class="leaf2" alt="" />
+        </div>
+
+        <div class="card">
+          <h2>Small Pizza</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aperiam
+            corporis pariatur quo quis placeat officiis quos ab eveniet
+            adipisci.
+          </p>
+          <button class="check">Check out</button>
+        </div>
+        <div class="card">
+          <h2>Medium Pizza</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum rem
+            possimus natus magnam similique laudantium nobis voluptatibus vitae
+            molestiae esse.
+          </p>
+          <button class="check">Check out</button>
+        </div>
+        <div class="card">
+          <h2>Large Pizza</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+            reprehenderit nemo dicta? Autem laborum doloremque magnam minima
+            natus dolore iure?
+          </p>
+          <button class="check">Check out</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <form>
+        <h1>
+          Get in <br />
+          <span>Touch</span>
+        </h1>
+        <label for="name">Email</label>
+        <input type="email" name="email" id="email" required />
+        <label for="">Question</label>
+        <input type="text" />
+        <button class="submit">Submit</button>
+        <div class="revealText"></div>
+      </form>
+      <div class="contact-img">
+        <img src="./img/pizza_slice1.png" alt="" />
+      </div>
+    </section>
+  </main>
+    <!-- Footer -->
+    <div class="footer">
+      <footer>
+        <div class="footerImage">
+          <img src="./img/pizza_phone.png.crdownload" alt="" />
+        </div>
+        <div class="icons">
+          <a class="icon"  href="#"><i class="fa-regular fa-envelope"></i></a>
+          <a class="icon" href="#"><i class="fa-solid fa-phone"></i></a>
+          <a class="icon" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a class="icon" href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <h2>Enjoy Pizza</h2>
+      </footer>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor">
+      <div class="cursor-text"></div>
+    </div>
+
+    <div class="slide"><img src="./img/pizza transition.jpg" alt=""></div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"
+      integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"
+      integrity="sha512-RvUydNGlqYJapy0t4AH8hDv/It+zKsv4wOQGb+iOnEfa6NnF2fzjXgRy+FDjSpMfC3sjokNUzsfYZaZ8QAwIxg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
