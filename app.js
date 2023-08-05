@@ -75,8 +75,10 @@ function cursorActive(e) {
     const item = e.target;
     const cursorText = document.querySelector(".cursor-text");
 
-    if (item.classList.contains("delivery") || item.classList.contains("Order") || item.classList.contains("check") || item.classList.contains("submit")) {
+    if (item.classList.contains("delivery") || item.classList.contains("Order") || item.classList.contains("check") || item.classList.contains("submit") || item.classList.contains("order")) {
         mouse.classList.add("btn-active");
+        // gsap.to(".color-h1", 1, { y: "0%" , ease: "slow(0.7, 0.7, false)"});
+        // gsap.to(".delivery-colr", 1, { y: "0%" , ease: "slow(0.7, 0.7, false)"});
         cursorText.innerText = "Tap";
     }
     else if (item.id === "logo" || item.classList.contains("icon")) {
@@ -90,20 +92,68 @@ function cursorActive(e) {
         mouse.classList.remove("nav-active");
         cursorText.innerText = "";
         mouse.classList.remove("delivery-active");
-     
+        // gsap.to(".color-h1", 1, { y: "100%", ease: "slow(0.8, 0.8, false)" });
+        // gsap.to(".delivery-colr", 1, { y: "100%" , ease: "slow(0.7, 0.7, false)"});
     }
 }
 
 //Barba transitions
+document.addEventListener("DOMContentLoaded", function () {
+    barba.init({
 
+        views: [
+            {
+                namespace: "home",
+                afterEnter() {
+                    pizzaAnimation();
+                },
 
+                beforeLeave() {
+                    controller1.destroy();
+                    controller2.destroy();
+                    scene1.destroy();
+                    scene2.destroy();
+                
+                }
+            },
+            {
+                namespace: "delivery",
+                afterEnter() {
+                    ballAnimation();
+                }
+            }
+        ],
 
+        transitions: [
+            {
+                leave({ current, next }) {
+                    let done = this.async();
+                    const t1 = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+                    t1.fromTo(current.container, 0.5, { opacity: 1 }, { opacity: 0 });
+                    t1.fromTo(".slide", 1, { x: "-100%" }, { x: "0%", onComplete: done });
+                },
+       
+                enter({ current, next }) {
+                    window.scrollTo(0, 0);
+                    let done = this.async();
+                    const t2 = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+                    t2.fromTo(".slide", 1, { x: "0%" }, { x: "100%", onComplete: done });
+                    t2.fromTo(next.container, 0.5, { opacity: 0 }, { opacity: 1 });
+               
+                }
+            }
+        ]
 
+    });
+
+});
 
 //Event Listners
 
 window.addEventListener("mousemove", cursorAnimation);
 window.addEventListener("mouseover", cursorActive);
 
-pizzaAnimation();
-ballAnimation();
+
+
+
+

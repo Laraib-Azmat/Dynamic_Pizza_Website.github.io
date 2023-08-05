@@ -61,6 +61,7 @@ h2{
    min-height: 10vh;
    width: 90%;
    margin: auto;
+   position: relative;
 }
 .logo{
     flex: 1 1 20rem;
@@ -78,8 +79,9 @@ ul a{
     padding: 2rem;
 }
 ul a:hover{
- scale: 1.5;
+ scale: 1.3;
  text-decoration: underline;
+ color: white;
 }
 #logo{
     font-size: var(--header4);
@@ -99,6 +101,7 @@ body{
  
 }
 
+
                        /* Section 1 */
   .sec1{
     display: flex;
@@ -108,8 +111,7 @@ body{
     width: 90%;
     margin: auto;
     color: white;
-   
-
+    
   }            
   
   .text{
@@ -119,6 +121,13 @@ body{
     align-items: start;
     justify-content: space-between;
     margin: 0rem 2rem;
+    background-color:  rgb(42, 41, 59);
+    color: white;
+}
+.login{
+    background-color:  rgb(42, 41, 59);
+    border-radius: 5rem;
+    color: whitesmoke;
   }
   .design{
     font-size: var(--text);
@@ -162,7 +171,20 @@ body{
     clip-path: circle(650px at 100% 0%);
     -webkit-clip-path: circle(650px at 100% 0%);
 }
-
+.h1-style{
+    position: relative; 
+    overflow: hidden;
+}
+.color-h1{
+    width: 100%;
+    height: 100%;
+    background:  rgb(229, 61, 61);
+    position: absolute;
+ top: 0%;
+ left: 0%;
+ mix-blend-mode:darken;
+ transform: translateY(100%);
+}
 
 /* Cards Section */
 .animation{
@@ -330,6 +352,8 @@ Cursor */
     transform: translate(-50% ,-50%);
     box-shadow: 0px 0px 10px white;
     pointer-events: none;
+    transition: all 0.5s ease;
+    transition-property: background ,transform;
 }
 .cursor-text{
      position: absolute;
@@ -383,6 +407,21 @@ z-index: 2;
     align-items: flex-start;
 flex: 1;
 margin: 0rem 2rem;
+
+}
+.delivery-style{
+    position: relative;
+    overflow: hidden;
+}
+.delivery-colr{
+    width: 100%;
+    height: 100%;
+    background:  rgb(78, 229, 61);
+    position: absolute;
+ top: 0%;
+ left: 0%;
+ mix-blend-mode:hue;
+ transform: translateY(100%);  
 }
 .delivery-text h1{
     color: black;
@@ -447,7 +486,7 @@ margin: 0rem 2rem;
     top: 0%;
     left: 0%;
     z-index: 5;
-    background-color: white;
+    background: linear-gradient(120deg, rgb(128, 101, 159), rgb(229, 200, 71));
     transform: translateX(-100%);
   }
   .slide img{
@@ -456,3 +495,99 @@ margin: 0rem 2rem;
     object-fit: contain;
    
   }
+
+/* Media Query */
+
+@media screen and (width >= 1500px) {
+    .circle{
+        clip-path: circle(900px at 100% 0%);
+        -webkit-clip-path: circle(900px at 100% 0%);
+    }
+    .html{
+     font-size: 80%;
+    }
+}
+@media screen and (width <= 1200px) {
+    .leaf  , .leaf2 {
+       display: none;
+    }
+    .card{
+        height: 50vh;
+    }
+}
+@media screen and (width < 900px) {
+    
+    .circle{
+        clip-path: circle(600px at 100% 0%);
+        -webkit-clip-path: circle(600px at 100% 0%);
+    }
+  .image img{
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (width < 800px) {
+    
+    .text{
+        z-index: 2;
+        background: none;
+       }
+     .animation{
+ flex-direction: column;
+        margin-bottom: 3rem;
+        align-items: center;
+     }  
+    .card p{
+        font-size: var(--header4);
+     }
+     .card h2{
+        font-size: var(--header1);
+     }
+     .check{
+        font-size: var(--header3);
+        width: 50%;
+     }
+}
+
+@media screen and (width < 600px) {
+    .circle{
+        display: none;
+    }
+    .header{
+        width: 100%;}
+   
+    .footer{
+        width: 100%;
+    }
+    .sec1{
+        display: block;
+        width: 100%;
+    }
+    .text{
+        align-self: center;
+    }
+    .check{
+        font-size: var(--header3);
+        width: 50%;
+     }
+  
+}
+@media screen and (width <= 550px) {
+    .header{
+        display: none;
+    }
+    .card{
+        width: 80%;
+            height: 80%;
+    } 
+    .card p{
+        font-size: var(--text);
+     }
+     .card h2{
+        font-size: var(--header2);
+     }
+     .check{
+        font-size: var(--text);
+     }
+}
+  
