@@ -1,4 +1,5 @@
 const mouse = document.querySelector(".cursor");
+const burger = document.querySelector(".burger");
 
 let controller1;
 let controller2;
@@ -77,8 +78,8 @@ function cursorActive(e) {
 
     if (item.classList.contains("delivery") || item.classList.contains("Order") || item.classList.contains("check") || item.classList.contains("submit") || item.classList.contains("order")) {
         mouse.classList.add("btn-active");
-        // gsap.to(".color-h1", 1, { y: "0%" , ease: "slow(0.7, 0.7, false)"});
-        // gsap.to(".delivery-colr", 1, { y: "0%" , ease: "slow(0.7, 0.7, false)"});
+        gsap.to(".color-h1", 1, { y: "0%" , ease: "slow(0.7, 0.7, false)"});
+        gsap.to(".delivery-colr", 1, { y: "0%" , ease: "slow(0.7, 0.7, false)"});
         cursorText.innerText = "Tap";
     }
     else if (item.id === "logo" || item.classList.contains("icon")) {
@@ -92,8 +93,8 @@ function cursorActive(e) {
         mouse.classList.remove("nav-active");
         cursorText.innerText = "";
         mouse.classList.remove("delivery-active");
-        // gsap.to(".color-h1", 1, { y: "100%", ease: "slow(0.8, 0.8, false)" });
-        // gsap.to(".delivery-colr", 1, { y: "100%" , ease: "slow(0.7, 0.7, false)"});
+        gsap.to(".color-h1", 1, { y: "100%", ease: "slow(0.8, 0.8, false)" });
+        gsap.to(".delivery-colr", 1, { y: "100%" , ease: "slow(0.7, 0.7, false)"});
     }
 }
 
@@ -148,11 +149,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
+function openBurger() {
+    burger.classList.toggle("active");
+    if (burger.classList.contains("active")) {
+        document.body.classList.add("hide");
+        gsap.to(".line1", 1, { rotate: "45", y: "3", backgroundColor: "black" });
+        gsap.to(".line2", 1, { rotate: "-45",y: "-3",  backgroundColor: "black" });
+        gsap.to(".header ul", 1, { clipPath: "circle(2500px at 100% -10%)" });
+    } else {
+        document.body.classList.remove("hide");
+        gsap.to(".line1", 1, { rotate: "0", y: "0", backgroundColor: "white" });
+        gsap.to(".line2", 1, { rotate: "0", y: "0", backgroundColor: "white" });
+        gsap.to(".header ul", 1, { clipPath: "circle(50px at 100% -10%)" });
+    }
+}
+
 //Event Listners
 
 window.addEventListener("mousemove", cursorAnimation);
 window.addEventListener("mouseover", cursorActive);
-
+burger.addEventListener("click", openBurger);
 
 
 
