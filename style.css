@@ -192,7 +192,9 @@ body{
  mix-blend-mode:darken;
  transform: translateY(100%);
 }
-
+.hide{
+    overflow: hidden;
+  }
 /* Cards Section */
 .animation{
     display: flex;

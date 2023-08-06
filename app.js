@@ -24,7 +24,7 @@ function pizzaAnimation() {
     })
         .setPin(t1, { pushFollowers: false })
         .setTween(t1)
-        .addIndicators({ colorStart: "white", colorTrigger: "white" })
+        // .addIndicators({ colorStart: "white", colorTrigger: "white" })
         .addTo(controller1);
         
     //controller 2
@@ -46,7 +46,7 @@ function pizzaAnimation() {
         })
             .setPin(t2, { pushFollowers: false })
             .setTween(t2)
-            .addIndicators({ colorStart: "white", colorTrigger: "white" })
+            // .addIndicators({ colorStart: "white", colorTrigger: "white" })
             .addTo(controller2);
     
 }
