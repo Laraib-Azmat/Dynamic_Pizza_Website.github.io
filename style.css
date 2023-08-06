@@ -568,7 +568,9 @@ z-index: 2;
   }
 }
 @media screen and (width < 800px) {
-    
+   .delivery-colr{
+    display: none;
+   } 
     .text{
         z-index: 2;
         background: none;
@@ -677,7 +679,7 @@ z-index: 2;
 }
   @media screen and (width <= 500px) {
     ul a{
-        font-size: var(--header1);
+        font-size: var(--header3);
     }
     .contact{
         display: block;
